@@ -1,0 +1,295 @@
+ 
+Question 1
+-------------
+    Explore and explain various methods in console function.
+
+
+    1) console.assert() 
+        The console.assert() method writes a message to the console, but only if an expression evaluates to false.    
+    Example:
+    console.assert(document.getElementById("sample"), "You have no element with ID 'sample'");
+
+    2) console.clear()
+        The console.clear() method clears the console.
+
+        The console.clear() method will also write a message in the console: "Console was cleared".
+    
+    Example:
+    <button onclick="console.clear()">Clear Console</button>
+
+    3) console.count()
+        Writes to the console the number of times that particular console.count() is called.
+
+        You can add a label that will be included in the console view. By default the label "default" will be added.
+    
+    Example:
+    <Script>
+        for (i = 0; i < 10; i++) {
+            console.count();
+        }
+    </Script>
+
+    4) console.error()
+        The console.error() method writes an error message to the console.
+
+        The console is useful for testing purposes.
+    
+    Example:
+    console.error("You made a mistake");
+
+    5) console.group()
+        The console.group() method indicates the start of a message group.
+
+        All messages will from now on be written inside this group.
+    
+    Example:
+    console.group();
+    console.log("Hello world!");
+    console.log("Hello again, this time inside a group!");
+
+    6)console.groupCollapsed()
+        The console.groupCollapsed() method indicates the start of a collapsed message group.
+
+        Click the expand button to open the message group.
+
+        All messages will from now on be written inside this group.
+
+    Example:
+    console.groupCollapsed();
+    console.log("Hello world!");
+    console.log("Hello again, this time inside a collapsed group!");
+
+    7) console.groupEnd()
+        The console.groupEnd() method indicates the end of a message group.
+    
+    Example:
+    console.log("Hello world!");
+    console.group();
+    console.log("Hello again, this time inside a group!");
+    console.groupEnd();
+    console.log("and we are back.");
+
+    8) console.info()
+        The console.info() method writes a message to the console.
+    
+    Example:
+    console.info("Hello World!")
+
+    9) console.log()
+        The console.log() method writes a message to the console.
+
+        The console is useful for testing purposes.
+
+    Example:
+    console.log("Hello World!")
+
+    10) console.table()
+        The console.table() method writes a table in the console view.
+
+        The first parameter is required, and must be either an object, or an array, containing data to fill the table.
+
+    Example:
+    console.table(["Audi", "Volvo", "Ford"]);
+
+    11) console.time() & console.timeEnd()
+        The console.time() method starts a timer in the console view.
+        The console.timeEnd() method ends a timer, and writes the result in the console view.
+        This method allows you to time certain operations in your code for testing purposes.
+
+    Example:
+    console.time();
+    for (i = 0; i < 100000; i++) {
+        some code here
+    }
+    console.timeEnd();
+
+    12) console.trace()
+        The console.trace() method displays a trace that show how the code ended up at a certain point.
+    
+    Example:
+    <button onclick="myFunction()">Start Trace</button>
+
+    <script>
+
+        function myFunction() {
+        myOtherFunction();
+        }
+
+        function myOtherFunction() {
+        console.trace();
+        }
+
+    </script>
+
+    13) console.warn()
+        The console.warn() method writes a warning to the console.
+
+    Example:
+    console.warn("This is a warning!")
+
+
+
+Question 2
+------------
+  Write the difference between var, let and const with code example.
+
+
+    var declarations are globally scoped or function scoped while let and const are block scoped.
+
+    var variables can be updated and re-declared within its scope; let variables can be updated but not re-declared; const variables can neither be updated nor re-declared.
+    
+    Example:
+    An example of trying to redeclare a let variable:
+    // In editor:
+    <script>
+        let points = 50;
+        let points = 60;
+    </script>
+    
+    // In the console I get an error:
+    Uncaught SyntaxError: Identifier 'points' has already been declared
+
+
+    They are all hoisted to the top of their scope. But while var variables are initialized with undefined, let and const variables are not initialized.
+
+    While var and let can be declared without being initialized, const must be initialized during declaration.
+
+    Var:
+    -----
+
+    The JavaScript variables statement is used to declare a variable and, optionally, we can initialize the value of that variable.
+
+    Example: var a =10;
+
+    Variable declarations are processed before the execution of the code.
+    The scope of a JavaScript variable declared with var is its current execution context.
+    The scope of a JavaScript variable declared outside the function is global.
+
+    Example:
+    function nodeSimplified(){
+        var a =10;
+        console.log(a);  // output 10
+        if(true){
+        var a=20;
+        console.log(a); // output 20
+        }
+        console.log(a);  // output 20
+    }
+
+
+    let:
+    -----
+
+    The let statement declares a local variable in a block scope. It is similar to var, in that we can optionally initialize the variable.
+
+    Example: let a =10;
+
+    The let statement allows you to create a variable with the scope limited to the block on which it is used.
+
+    Example:
+    function nodeSimplified(){
+        let a =10;
+        console.log(a);  // output 10
+        if(true){
+        let a=20;
+        console.log(a); // output 20
+        }
+        console.log(a);  // output 10
+    }
+
+
+    const:
+    -------
+    const statement values can be assigned once and they cannot be reassigned. The scope of const statement works similar to let statements.
+
+    Example: 
+    function nodeSimplified(){
+        const MY_VARIABLE =10;
+        console.log(MY_VARIABLE);  //output 10
+        MY_VARIABLE =20;           //throws type error
+        console.log(MY_VARIABLE); 
+    }
+
+
+
+Question 3
+------------
+  Write a brief intro on available datatypes in JavaScript.
+
+
+    Strings:
+    --------
+        A string (or a text string) is a series of characters like "John Doe".
+
+        Strings are written with quotes. You can use single or double quotes.
+
+    Example:
+    var carName1 = "Volvo XC60";    
+    var carName2 = 'Volvo XC60';  
+    
+    
+    Numbers:
+    ---------
+        JavaScript has only one type of numbers.
+
+        Numbers can be written with, or without decimals.
+
+    Example:
+    var x1 = 34.00;     
+    var x2 = 34; 
+
+
+    Booleans:
+    ----------
+        Booleans can only have two values: true or false.
+
+    Example:
+    var x = 5;
+    var y = 5;
+    var z = 6;
+    (x == y)        Returns true
+    (x == z)        Return false
+
+
+    Arrays:
+    --------
+        JavaScript arrays are written with square brackets.
+
+        Array items are separated by commas.
+
+        Array indexes are zero-based, which means the first item is [0], second is [1], and so on.
+
+    Example:
+    var cars = ["Saab", "Volvo", "BMW"];
+
+
+    Objects:
+    ---------
+        JavaScript objects are written with curly braces {}.
+
+        Object properties are written as name:value pairs, separated by commas.
+
+    Example:
+    var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+    
+    The object (person) in the example above has 4 properties: firstName, lastName, age, and eyeColor.
+
+
+    Undefined:
+    -----------
+        In JavaScript, a variable without a value, has the value undefined. The type is also undefined.
+
+        Any variable can be emptied, by setting the value to undefined. The type will also be undefined.
+
+    Example:
+    var car;    Value is undefined, type is undefined
+
+
+    Null:
+    ------
+        In JavaScript null is "nothing". It is supposed to be something that doesn't exist.
+
+    Example:
+    var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+    
+    person = null;    // Now value is null, but type is still an object
