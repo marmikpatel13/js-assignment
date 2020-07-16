@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2 Assignment - LetsUpgrade</title>
+</head>
+
+<body>
+    <h1>Day 2 Assignment</h1>
+    <h2><mark>Question 2</mark></h2>
+    <p>Expalin with example the remaining methods of String and Array.</p>
+    <br><br>
+    <p>-------------------------------------------</p>
+    <h1>String Methods</h1>
+    <p>-------------------------------------------</p>
+    <h2>1) String Length</h2>
+    <p>The length property returns the length of a string.</p>
+    <h3>Example:</h3>
+    <b>
+        <xmp>
+            <script>
+                var txt = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+                console.log("String length is: ", txt.length);
+            </script>
+        </xmp>
+    </b>
+    <h2>2) Finding a String in a String</h2>
+    <p>The <mark>indexOf()</mark> method returns the index of (the position of) the first occurrence of a specified text
+        in a string.
+    </p>
+    <p>
+        The <mark>lastIndexOf()</mark> method returns the index of the last occurrence of a specified text in a string
+    </p>
+    <h3>Example:</h3>
+    <b>
+        <xmp>
+            <script>
+                var str = "Please locate where 'locate' occurs!";
+                var firstpos = str.indexOf("locate");
+                var lastpos = str.lastIndexOf("locate");
+                console.log(firstpos);
+                console.log(lastpos);
+            </script>
+        </xmp>
+    </b>
+    <h2>3) Searching for a String in a String</h2>
+    <p>The <mark>search()</mark> method searches a string for a specified value and returns the position of the match.
+    </p>
+    <h3>Example:</h3>
+    <b>
+        <xmp>
+            <script>
+                var str = "Please locate where 'locate' occurs!";
+                var pos = str.search("locate");
+                console.log(pos);
+            </script>
+        </xmp>
+    </b>
+    <h2>4) slice()</h2>
+    <p>slice() extracts a part of a string and returns the extracted part in a new string.</p>
+    <h3>Example:</h3>
+    <b>
+        <xmp>
+            <script>
+                var str = "Apple, Banana, Kiwi";
+                var res = str.slice(7, 13);
+                console.log(res); 
+            </script>
+        </xmp>
+    </b>
+    <h2>5) substring()</h2>
+    <p>substring() is similar to slice().</p>
+
+    <p>The difference is that substring() cannot accept negative indexes.</p>
+    <h3>Example:</h3>
+    <b>
+        <xmp>
+            <script>
+                var str = "Apple, Banana, Kiwi";
+                var res = str.substring(7, 13);
+                console.log(res);
+            </script>
+        </xmp>
+    </b>
+    <h2>6) substr()</h2>
+    <p>substr() is similar to slice().</p>
+
+    <p>The difference is that the second parameter specifies the length of the extracted part.</p>
+    <h3>Example:</h3>
+    <b>
+        <xmp>
+            <script>
+                var str = "Apple, Banana, Kiwi";
+                var res = str.substr(7, 6);
+                console.log(res);
+            </script>
+        </xmp>
+    </b>
+    <h2>7) Replacing String Content</h2>
+    <p>The <mark>replace()</mark> method replaces a specified value with another value in a string.</p>
+    <h3>Example:</h3>
+    <b>
+        <xmp>
+            <p>Replace "Microsoft" with "Google" in the paragraph below:</p>
+
+            <button onclick="myFunction()">Try it</button>
+
+            <p id="demo">Please visit Microsoft!</p>
+
+            <script>
+                function myFunction() {
+                    var str = document.getElementById("demo").innerHTML;
+                    var txt = str.replace("Microsoft", "Google");
+                    document.getElementById("demo").innerHTML = txt;
+                }
+            </script>
+        </xmp>
+    </b>
+    <h2>8) Converting to Upper and Lower Case</h2>
+    <p>A string is converted to upper case with <mark>toUpperCase()</mark>.</p>
+    <p>A string is converted to lower case with <mark>toLowerCase()</mark>.</p>
+    <h3>Example:</h3>
+    <b>
+        <xmp>
+            <script>
+                var text1 = "Hello World!";       // String
+                var text2 = text1.toUpperCase();
+                var text3 = text1.toLowerCase();
+                console.log("The UpperCase string is: ", text2);
+                console.log("The LowerCase string is: ", text3);
+            </script>
+        </xmp>
+    </b>
+    <h2>9) concat()</h2>
+    <p>concat() joins two or more strings.</p>
+    <h3>Example:</h3>
+    <b>
+        <xmp>
+            <script>
+                var text1 = "Hello";
+                var text2 = "World";
+                var text3 = text1.concat(" ", text2);
+                console.log(text3);
+            </script>
+        </xmp>
+    </b>
+    <h2>10) trim()</h2>
+    <p>The trim() method removes whitespace from both sides of a string.</p>
+    <h3>Example:</h3>
+    <b>
+        <xmp>
+            <script>
+                var str = "       Hello World!        ";
+                alert(str.trim());
+            </script>
+        </xmp>
+    </b>
+    <h2>11) charAt()</h2>
+    <p>The charAt() method returns the character at a specified index (position) in a string.</p>
+    <h3>Example:</h3>
+    <b>
+        <xmp>
+            <script>
+                var str = "HELLO WORLD";
+                console.log(str.charAt(0));            // returns H
+            </script>
+        </xmp>
+    </b>
+    <h2>12) charCodeAt()</h2>
+    <p>The charCodeAt() method returns the unicode of the character at a specified index in a string.</p>
+    <h3>Example:</h3>
+    <b>
+        <xmp>
+            <script>
+                var str = "HELLO WORLD";
+                console.log(str.charCodeAt(0));         // returns 72
+            </script>
+        </xmp>
+    </b>
+    <h2>13) Converting a String to an Array</h2>
+    <p>A string can be converted to an array with the <mark>split()</mark> method.</p>
+    <h3>Example:</h3>
+    <b>
+        <xmp>
+            <script>
+                var str = "a,b,c,d,e,f";
+                var arr = str.split(",");
+                console.log(arr);
+            </script>
+        </xmp>
+    </b>
+    <br><br>
+    <p>-------------------------------------------</p>
+    <h1>Array Methods</h1>
+    <p>-------------------------------------------</p>
+    <h2>1) Converting Arrays to Strings</h2>
+    <p>The JavaScript method <mark>toString()</mark> converts an array to a string of (comma separated) array values.
+    </p>
+    <h3>Example:</h3>
+    <b>
+        <xmp>
+            <script>
+                var fruits = ["Banana", "Orange", "Apple", "Mango"];
+                console.log(fruits.toString());
+            </script>
+        </xmp>
+    </b>
+    <h2>2) pop()</h2>
+    <p>The pop() method removes the last element from an array.</p>
+    <h3>Example:</h3>
+    <b>
+        <xmp>
+            <script>
+                var fruits = ["Banana", "Orange", "Apple", "Mango"];
+                fruits.pop();              // Removes the last element ("Mango") from fruits
+                console.log(fruits);
+            </script>
+        </xmp>
+    </b>
+    <h2>3) push()</h2>
+    <p>The push() method adds a new element to an array (at the end).</p>
+    <h3>Example:</h3>
+    <b>
+        <xmp>
+            <script>
+                var fruits = ["Banana", "Orange", "Apple", "Mango"];
+                fruits.push("Kiwi");       //  Adds a new element ("Kiwi") to fruits
+                console.log(fruits);
+            </script>
+        </xmp>
+    </b>
+    <h2>4) Shifting Elements</h2>
+    <p>The <mark>shift()</mark> method removes the first array element and "shifts" all other elements to a lower index.
+    </p>
+    <p>
+        The <mark>unshift()</mark> method adds a new element to an array (at the beginning), and "unshifts" older
+        elements
+    </p>
+    <h3>Example:</h3>
+    <b>
+        <xmp>
+            <script>
+                var fruits = ["Banana", "Orange", "Apple", "Mango"];
+                fruits.shift();            // Removes the first element "Banana" from fruits
+                console.log(fruits);
+                fruits.unshift("Lemon");    // Adds a new element "Lemon" to fruits
+                console.log(fruits);
+            </script>
+        </xmp>
+    </b>
+    <h2>5) Deleting Elements</h2>
+    <p>Elements can be deleted by using the JavaScript operator delete.</p>
+    <h3>Example:</h3>
+    <b>
+        <xmp>
+            <script>
+                var fruits = ["Banana", "Orange", "Apple", "Mango"];
+                delete fruits[0];           // Changes the first element in fruits to undefined
+                console.log(fruits);
+            </script>
+        </xmp>
+    </b>
+    <h2>6) Splicing an Array</h2>
+    <p>The <mark>splice()</mark> method can be used to add new items to an array.</p>
+    <p>The first parameter (2) defines the position where new elements should be added (spliced in).</p>
+    <p>The second parameter (0) defines how many elements should be removed.</p>
+    <p>The rest of the parameters ("Lemon" , "Kiwi") define the new elements to be added.</p>
+    <h3>Example:</h3>
+    <b>
+        <xmp>
+            <script>
+                var fruits = ["Banana", "Orange", "Apple", "Mango"];
+                fruits.splice(2, 0, "Lemon", "Kiwi");
+                console.log(fruits);
+            </script>
+        </xmp>
+    </b>
+    <h2>7) Merging (Concatenating) Arrays</h2>
+    <p>The <mark>concat()</mark> method creates a new array by merging (concatenating) existing arrays.</p>
+    <h3>Example:</h3>
+    <b>
+        <xmp>
+            <script>
+                var myGirls = ["Cecilie", "Lone"];
+                var myBoys = ["Emil", "Tobias", "Linus"];
+                var myChildren = myGirls.concat(myBoys);   // Concatenates (joins) myGirls and myBoys
+                console.log(myChildren);
+            </script>
+        </xmp>
+    </b>
+    <h2>8) Slicing an Array</h2>
+    <p>The slice() method slices out a piece of an array into a new array.</p>
+    <h3>Example:</h3>
+    <b>
+        <xmp>
+            <script>
+                var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+                var citrus = fruits.slice(1);
+                console.log(citrus);
+            </script>
+        </xmp>
+    </b>
+    <h2>9) Sorting an Array</h2>
+    <p>The <mark>sort()</mark> method sorts an array alphabetically.</p>
+    <h3>Example:</h3>
+    <b>
+        <xmp>
+            <script>
+                var fruits = ["Banana", "Orange", "Apple", "Mango"];
+                fruits.sort();        // Sorts the elements of fruits
+                console.log(fruits);
+            </script>
+        </xmp>
+    </b>
+    <h2>10) Reversing an Array</h2>
+    <p>The <mark>reverse()</mark> method reverse an elements in an array.</p>
+    <h3>Example:</h3>
+    <b>
+        <xmp>
+            <script>
+                var fruits = ["Banana", "Orange", "Apple", "Mango"];
+                fruits.reverse();     // reverse the order of the elements
+                console.log(fruits);
+            </script>
+        </xmp>
+    </b>
+</body>
+
+</html>
