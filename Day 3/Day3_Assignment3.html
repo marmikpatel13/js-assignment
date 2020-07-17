@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 3 Assignment - LetsUpgrade</title>
+</head>
+
+<body>
+    <center>
+        <h1>Day 3 Assignment</h1>
+    </center><br>
+    <h3>Question 3</h3>
+    <p>----------------------</p>
+    <h4>Write a program to take marks as input from the user and grade him accordingly. Use conditional statements. Aslo
+        the same code using switch or ternary.</h4>
+    <br>
+    <h3 id="grade_result"></h3>
+    <p>Also press F12 to check the output in console.</p>
+
+
+    <script>
+        function AssignGrade(marks) {
+            if (marks != null) {
+                if (marks >= 0 && marks <= 20) {
+                    let grade = "Your marks are " + marks + " and Your grade is E2.";
+                    return grade;
+                }
+                else if (marks >= 21 && marks <= 32) {
+                    let grade = "Your marks are " + marks + " and Your grade is E1.";
+                    return grade;
+                }
+                else if (marks >= 33 && marks <= 40) {
+                    let grade = "Your marks are " + marks + " and Your grade is D.";
+                    return grade;
+                }
+                else if (marks >= 41 && marks <= 50) {
+                    let grade = "Your marks are " + marks + " and Your grade is C2.";
+                    return grade;
+                }
+                else if (marks >= 51 && marks <= 60) {
+                    let grade = "Your marks are " + marks + " and Your grade is C1.";
+                    return grade;
+                }
+                else if (marks >= 61 && marks <= 70) {
+                    let grade = "Your marks are " + marks + " and Your grade is B2.";
+                    return grade;
+                }
+                else if (marks >= 71 && marks <= 80) {
+                    let grade = "Your marks are " + marks + " and Your grade is B1.";
+                    return grade;
+                }
+                else if (marks >= 81 && marks <= 90) {
+                    let grade = "Your marks are " + marks + " and Your grade is A2.";
+                    return grade;
+                }
+                else if (marks >= 91 && marks <= 100) {
+                    let grade = "Your marks are " + marks + " and Your grade is A1.";
+                    return grade;
+                }
+                else {
+                    let grade = "Please enter valid marks.";
+                    return grade;
+                }
+            } else {
+                let is_null = "The value entered is " + marks + ".";
+                return is_null;
+            }
+
+        }
+
+
+        var marks = prompt("Enter your marks to check your grade.", 0);
+        var result = AssignGrade(marks);
+        document.getElementById("grade_result").innerHTML = result;
+        console.log(result);
+
+    </script>
+</body>
+
+</html>
