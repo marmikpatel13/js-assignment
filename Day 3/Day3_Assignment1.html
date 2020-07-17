@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 3 Assignment - LetsUpgrade</title>
+</head>
+
+<body>
+    <center>
+        <h1>Day 3 Assignment</h1>
+    </center><br>
+    <h3>Question 1</h3>
+    <p>----------------------</p>
+    <h4>Take a number from a user and write a function which checks whether the number is even or odd. Assign a result
+        to a variable and log that variale in the console.</h4>
+    <br>
+    <h3 id="Num_result"></h3>
+    <p>Also press F12 to check the output in console.</p>
+
+
+    <script>
+        function oddEven(num) {
+            if (num % 2 == 0 && num != null) {
+                let is_even = "The number entered is " + num + " and Number is even.";
+                return is_even;
+            }
+            else if (num % 2 != 0 && num != null) {
+                let is_odd = "The number entered is " + num + " and Number is odd.";
+                return is_odd;
+            }
+            else {
+                let is_null = "The number entered is " + num + ".";
+                return is_null;
+            }
+        }
+
+        var num = prompt("Enter a number", 2);
+        var result = oddEven(num);
+        document.getElementById("Num_result").innerHTML = result;
+        console.log(result);
+    </script>
+</body>
+
+</html>
