@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 3 Assignment - LetsUpgrade</title>
+</head>
+
+<body>
+    <center>
+        <h1>Day 3 Assignment</h1>
+    </center><br>
+    <h3>Question 2</h3>
+    <p>----------------------</p>
+    <h4>Write a program which will take OS name and version from the user separated by a space. Then log the OS name and
+        version on the console.</h4>
+    <br>
+    <h3 id="os_result"></h3>
+    <p>Also press F12 to check the output in console.</p>
+
+
+    <script>
+        function DisplayOS(OS_name) {
+            if (OS_name != null) {
+                let name = OS_name.split(" ");
+                var os = "The OS name is " + name[0] + " and Version is " + name[1] + ".";
+                return os;
+            } else {
+                let is_null = "The OS name you have entered is null. Please enter valid name.";
+                return is_null;
+            }
+        }
+
+        var OS_name = prompt("Enter a OS name and version", "Android 9");
+        var result = DisplayOS(OS_name);
+        document.getElementById("os_result").innerHTML = result;
+        console.log(result);
+    </script>
+</body>
+
+</html>
