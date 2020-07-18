@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 4 Assignment - LetsUpgrade</title>
+</head>
+
+<body>
+    <h1>Day 4 Assignment</h1>
+    <h2>Question 2:</h2>
+    <b>Destructure the following object:</b>
+    <strong>
+        <xmp>
+            const student ={
+              name: "Helsinki",
+              age: 24,
+              projects: {
+                diceGame: "Two player dice game using JavaScript."
+              }
+            }
+        </xmp>
+    </strong><br><br>
+    <p>Press F12 to check output in console.</p>
+
+    <script>
+        const student = {
+            name: "Helsinki",
+            age: 24,
+            projects: {
+                diceGame: "Two player dice game using JavaScript.",
+            },
+        }
+
+        const { name, age, projects: { diceGame } } = student;
+
+        console.log("Name is: ", name);
+        console.log("Age is: ", age);
+        console.log("Project is: ", diceGame);
+    </script>
+</body>
+
+</html>
