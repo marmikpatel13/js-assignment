@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 4 Assignment - LetsUpgrade</title>
+</head>
+
+<body>
+    <h1>Day 4 Assignment</h1>
+    <h2>Question 4:</h2>
+    <b>Make a Calculator in Javascript which can do operations as Addtion, Subtraction, Multiplication, Division,
+        Square root, Percentage.</b>
+    <br><br><br>
+    <label for="input">Enter First Number:</label><br><br>
+    <input type="text" id="num1" value="0"><br><br>
+    <label for="input">Enter Second Number</label><br><br>
+    <input type="text" id="num2" value="0"><br><br>
+    <h2 id="displayResult"></h2>
+    <button onclick="Addition()">Addition</button>
+    <button onclick="Subtraction()">Subtraction</button>
+    <button onclick="Multiplication()">Multiplication</button>
+    <button onclick="Squareroot()">Squareroot</button>
+    <button onclick="Percentage()">Percentage</button>
+    <script>
+
+        function Addition() {
+            let num1 = parseInt(document.getElementById("num1").value);
+            let num2 = parseInt(document.getElementById("num2").value);
+            let result = num1 + num2;
+            document.getElementById("displayResult").innerHTML = "The addition of two number is: <mark>" + result + "</mark>";
+        }
+        function Subtraction() {
+            let num1 = parseInt(document.getElementById("num1").value);
+            let num2 = parseInt(document.getElementById("num2").value);
+            let result = num1 - num2;
+            document.getElementById("displayResult").innerHTML = "The subtraction of two number is: <mark>" + result + "</mark>";
+        }
+        function Multiplication() {
+            let num1 = parseInt(document.getElementById("num1").value);
+            let num2 = parseInt(document.getElementById("num2").value);
+            let result = num1 * num2;
+            document.getElementById("displayResult").innerHTML = "The multiplication of two number is: <mark>" + result + "</mark>";
+        }
+        function Division() {
+            let num1 = parseInt(document.getElementById("num1").value);
+            let num2 = parseInt(document.getElementById("num2").value);
+            let result = num1 / num2;
+            document.getElementById("displayResult").innerHTML = "The division of two number is: <mark>" + result + "</mark>";
+        }
+        function Squareroot() {
+            let num1 = parseInt(document.getElementById("num1").value);
+            let num2 = parseInt(document.getElementById("num2").value);
+            let result1 = Math.sqrt(num1);
+            let result2 = Math.sqrt(num2);
+            document.getElementById("displayResult").innerHTML = "The squareroot of " + num1 + " is: <mark>" + result1 + "</mark> and Squareroot of " + num2 + " is: <mark>" + result2 + "</mark>";
+        }
+        function Percentage() {
+            let num1 = parseInt(document.getElementById("num1").value);
+            let num2 = parseInt(document.getElementById("num2").value);
+            let result = (num1 / 100) * num2;
+            document.getElementById("displayResult").innerHTML = num1 + "% of " + num2 + " is: <mark>" + result + "</mark>";
+        }
+    </script>
+</body>
+
+</html>
