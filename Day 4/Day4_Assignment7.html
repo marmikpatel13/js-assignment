@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 4 Assignment - LetsUpgrade</title>
+</head>
+
+<body>
+    <h1>Day 4 Assignment</h1>
+    <h2>Question 7:</h2>
+    <b>Write the code which outputs prime numbers in the interval from 2 to n.</b><br><br>
+    <h1 id="displayResult"></h1>
+
+    <script>
+        var prime_nums = [2];
+        var num = Number(prompt("Enter number to check prime numbers."));
+        display(num);
+
+        function primeNum(num) {
+            for (var i = 2; i < num; i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function display(num) {
+            var arr = [2];
+            for (var i = 3; i < num; i += 2) {
+                if (primeNum(i)) {
+                    prime_nums.push(i);
+                }
+            }
+            document.getElementById("displayResult").innerHTML = "Prime numbers between 2 to " + num + " is: " + prime_nums;
+        }
+
+
+
+    </script>
+</body>
+
+</html>
