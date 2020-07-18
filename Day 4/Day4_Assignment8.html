@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 4 Assignment - LetsUpgrade</title>
+</head>
+
+<body>
+    <h1>Day 4 Assignment</h1>
+    <h2>Question 8:</h2>
+    <b>Replace Function Expressions with arrow functions in the code below:</b><br><br>
+    <b>
+        <xmp>
+            function ask(question, yes, no){
+              if(confirm(question)){
+                yes();
+              }else{
+                no();
+              }
+            }
+
+            ask("Do you agree?",
+            function(){alert("You agreed.");},
+            function(){alert("You canceled the execution.");}
+            );
+        </xmp>
+    </b>
+    <h2>Answer:</h2>
+    <b>
+        <xmp>
+            let ask = (question, yes, no) => (confirm(question)) ? yes() : no();
+        </xmp>
+    </b>
+
+    <script>
+
+        let ask = (question, yes, no) => (confirm(question)) ? yes() : no();
+        ask("Do you agree?",
+            function () { alert("You agreed!"); },
+            function () { alert("You canceled the execution!"); },
+        )
+
+    </script>
+</body>
+
+</html>
