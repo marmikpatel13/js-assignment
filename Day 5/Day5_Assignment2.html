@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 5 Assignment - LestUpgrade</title>
+</head>
+
+<body>
+    <center>
+        <h1>Day 5 Assignment</h1>
+    </center>
+    <br><br>
+    <h2>Question 2</h2>
+    <ol>
+        <li><b>Create a Class User with properties as name, age & email.</b></li>
+        <li>
+            <b>He can login and logout</b>
+        </li>
+        <li>
+            <b>Create another class Moderator which has all the features of User, plus additional functionality to Add
+                coins and remove coins.</b>
+        </li>
+        <li>
+            <b>Create one more class Admin which has all the features of Moderator plus additional features like add a
+                Course and delete a particular course for a user.</b>
+        </li>
+    </ol>
+    <br><br>
+    <p>Press F12 to check output in console.</p>
+
+    <script>
+        class User {
+            constructor(name, age, email) {
+                this.name = name;
+                this.age = age;
+                this.email = email;
+                this.coins = 0;
+                this.courses = [];
+            }
+            login() {
+                console.log(`${this.name} has logged in.`);
+            }
+            logout() {
+                console.log(`${this.name} has logged out.`);
+            }
+        }
+        class Moderator extends User {
+            constructor(name, age, email) {
+                super(name, age, email);
+            }
+
+            addcoin() {
+                this.coins++;
+                console.log(`${this.name} has added a coin and total coins are: ${this.coins}`);
+            }
+            removecoin() {
+                this.coins--;
+                console.log(`${this.name} has removed a coin and total coins are: ${this.coins}`);
+            }
+        }
+        class Admin extends Moderator {
+            addcourse(user, course) {
+                user.courses.push(course);
+                console.log(user);
+            }
+            deletecourse(user, course) {
+                user.courses.splice(user.courses.indexOf(course), 1);
+                console.log(user);
+            }
+        }
+
+        let user1 = new User('Raj', 23, 'r@gmail.com');
+        let user2 = new User('priyank', 18, 'p@gmail.com');
+        let mod = new Moderator('Mehul', 27, 'm@gmail.com');
+        let admin = new Admin('Shirin', 33, 's@gmail.com');
+
+        user1.login();
+        user1.logout();
+
+        mod.addcoin();
+        console.log(mod);
+        mod.removecoin();
+        console.log(mod);
+
+        console.log(admin);
+        admin.addcourse(user1, 'JavaScript');
+        admin.addcourse(user1, 'Python');
+        admin.addcourse(user1, 'Java');
+        admin.deletecourse(user1, 'JavaScript');
+
+
+    </script>
+</body>
+
+</html>
