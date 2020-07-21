@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 5 Assignment - LestUpgrade</title>
+</head>
+
+<body>
+    <center>
+        <h1>Day 5 Assignment</h1>
+    </center>
+    <br><br>
+    <h2>Question 1</h2>
+    <b>Write a program which does the following things:</b>
+    <ol>
+        <li>
+            <p> Takes a positive number from the user.</p>
+        </li>
+        <li>
+            <p>Makes an array of numbers till the number given by user</p>
+        </li>
+        <li>
+            <p>Use higher order function to filter the odd numbers</p>
+        </li>
+        <li>
+            <p>Generate and array of the cubes of the filtered numbers</p>
+        </li>
+    </ol>
+    <br><br>
+    <label for="input">Enter number and add it to the array</label><br><br>
+    <input type="text" id="inputnum" style="width: 400px; height:25px;">
+    <br><br>
+    <h2 id="result"></h2>
+    <button id="addNum" onclick="MakeArray()">Add Number</button>
+    <button onclick="Display()">Print Array</button>
+
+    <script>
+        var arr = [];
+        function MakeArray() {
+            var num = document.getElementById("inputnum").value;
+            if (num != '') {
+                arr.push(num);
+                document.getElementById("inputnum").value = '';
+            } else {
+                document.getElementById("inputnum").value = "Enter any positive number."
+            }
+        }
+        function Display() {
+            console.log(arr);
+            let msg = (arr != '') ? arr : "Empty";
+            document.getElementById("result").innerHTML = "The array elements are: " + msg;
+        }
+    </script>
+</body>
+
+</html>
