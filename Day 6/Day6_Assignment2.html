@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 6 Assignment - LetsUpgrade</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            width: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Day 6 LetsUpgrade Assignment</h1>
+    <h2>Question 2</h2>
+    <h3>
+        Write a program that will display the multiplication table of a number on the webpage in a proper format. Take
+        the input from the user.
+    </h3>
+    <strong>
+        <xmp>
+            Input - 5
+
+            Output:
+
+            5 x 1 = 5
+            5 x 2 = 10
+
+            and so on...
+
+        </xmp>
+    </strong>
+    <br><br>
+    <h2>Output:</h2><br>
+    <table id="mulTable">
+
+    </table>
+</body>
+<script>
+    var num = prompt("Enter number to get multiplication table", 1);
+    for (let i = 1; i <= 10; i++) {
+        let result = num * i;
+        document.getElementById("mulTable").innerHTML += `<tr><td>${num}&nbsp; x &nbsp;${i} = ${result}</td></tr>`;
+    }
+</script>
+
+</html>

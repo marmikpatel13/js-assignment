@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 6 Assignment - LetsUpgrade</title>
+    <style>
+        .black {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Day 6 LetsUpgrade Assignment</h1>
+    <h2>Question 3</h2>
+    <h3>
+        Make a webpage that will ask the name of the user. Then will display a welcome message on the webpage. Also the
+        webpage should also have a clock.
+    </h3>
+    <h3>
+        Using the toggle method of classList add a dark mode feature to the website.
+    </h3>
+    <h1>
+        ----------------------------------------------------------------------------------------------------------------------------------------------
+    </h1>
+    <center>
+        <h1 id="time"></h1>
+    </center><br>
+    <h2 id="welcomemsg"></h2>
+    <br><br>
+    <h2>Click button to switch to the dark mode.</h2>
+    <button id="dmode" onclick="changeColor()" style="height: 30px;width: 200px;">Switch to Dark Mode</button>
+</body>
+<script>
+    var name = prompt("Enter your name", "Anonymous");
+
+    document.getElementById("welcomemsg").innerHTML = `Hello, ${name} Welcome To The LetsUpgrade Assignment Page`;
+
+    function clock() {
+        let date = new Date();
+        let currentTime = date.toLocaleTimeString();
+        document.getElementById("time").innerText = currentTime;
+    }
+    setInterval(clock, 1000);
+
+
+
+    function changeColor() {
+        document.body.classList.toggle('black');
+        let pagebody = document.body;
+        if (pagebody.className == 'black') {
+            document.getElementById("dmode").innerText = "Switch to Light Mode";
+        } else {
+            document.getElementById("dmode").innerText = "Switch to Dark Mode";
+        }
+
+    }
+</script>
+
+</html>
