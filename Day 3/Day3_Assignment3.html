@@ -16,7 +16,12 @@
     <h4>Write a program to take marks as input from the user and grade him accordingly. Use conditional statements. Aslo
         the same code using switch or ternary.</h4>
     <br>
+    <h2>Using conditional statements:</h2>
     <h3 id="grade_result"></h3>
+    <br>
+    <h2>Using switch case:</h2>
+    <h3 id="displayGrade"></h3>
+    <br><br>
     <p>Also press F12 to check the output in console.</p>
 
 
@@ -64,14 +69,71 @@
                     return grade;
                 }
             } else {
+                console.log(marks);
                 let is_null = "The value entered is " + marks + ".";
                 return is_null;
             }
 
         }
-
-
         var marks = prompt("Enter your marks to check your grade.", 0);
+        var studentGrade;
+        var display = document.getElementById("displayGrade");
+        switch (true) {
+            case (marks >= 0 && marks <= 20):
+                if (marks == null) {
+                    studentGrade = "The value entered is " + marks + ".";
+                    display.innerHTML = studentGrade;
+                } else {
+                    studentGrade = "Your marks are " + marks + " and Your grade is E2.";
+                    display.innerHTML = studentGrade;
+                }
+                break;
+
+            case (marks >= 21 && marks <= 32):
+                studentGrade = "Your marks are " + marks + " and Your grade is E1.";
+                display.innerHTML = studentGrade;
+                break;
+
+            case (marks >= 33 && marks <= 40):
+                studentGrade = "Your marks are " + marks + " and Your grade is D.";
+                display.innerHTML = studentGrade;
+                break;
+
+            case (marks >= 41 && marks <= 50):
+                studentGrade = "Your marks are " + marks + " and Your grade is C2.";
+                display.innerHTML = studentGrade;
+                break;
+
+            case (marks >= 51 && marks <= 60):
+                studentGrade = "Your marks are " + marks + " and Your grade is C1.";
+                display.innerHTML = studentGrade;
+                break;
+
+            case (marks >= 61 && marks <= 70):
+                studentGrade = "Your marks are " + marks + " and Your grade is B2.";
+                display.innerHTML = studentGrade;
+                break;
+
+            case (marks >= 71 && marks <= 80):
+                studentGrade = "Your marks are " + marks + " and Your grade is B1.";
+                display.innerHTML = studentGrade;
+                break;
+
+            case (marks >= 81 && marks <= 90):
+                studentGrade = "Your marks are " + marks + " and Your grade is A2.";
+                display.innerHTML = studentGrade;
+                break;
+
+            case (marks >= 91 && marks <= 100):
+                studentGrade = "Your marks are " + marks + " and Your grade is A1.";
+                display.innerHTML = studentGrade;
+                break;
+
+            default:
+                studentGrade = "Please enter valid marks.";
+                display.innerHTML = studentGrade;
+        }
+
         var result = AssignGrade(marks);
         document.getElementById("grade_result").innerHTML = result;
         console.log(result);
