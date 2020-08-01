@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>To-Do Application - LetsUpgrade Project</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+			<span class="close-modal">&times;</span>
+			<p id="modal-text"></p>
+		</div>
+	</div>
+	<div class="titlebox">
+		<h1 id="title" contenteditable="true">Your Board Name</h1>
+	</div>
+	<div class="clear-position">
+		<button class="clear" onclick="clearBoard()">x</button>
+		<span class="tooltip">Clear Board</span>
+	</div>
+	<div id="inputFields" class="inputWrapper">
+		<textarea rows="1" cols="60" id="inputTask" class="taskinput"></textarea>
+		<button id="addTask" class="createTask">Create</button>
+	</div>
+	<div class="cardWrapper">
+		<div class="todo">
+			<h1 style="display: inline-block;">TO DO</h1>
+			<div id="createOne" class="createbutton">
+				<span class="createtask">+</span>
+			</div>
+			<div class="taskbox" id="displayallTasks">
+
+			</div>
+		</div>
+
+	</div>
+	<script src="index.js"></script>
+</body>
+
+</html>
