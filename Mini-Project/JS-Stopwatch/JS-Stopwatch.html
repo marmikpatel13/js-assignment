@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JS Stopwatch - Javascript Stopwatch LetsUpgrade</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300">
+
+    <style>
+        body {
+            background-color: seashell;
+        }
+
+        .heading {
+            text-align: center;
+            font-family: Ubuntu;
+        }
+
+        .timerContainer {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 300;
+            width: 1000px;
+            margin: 0 auto;
+            min-height: 300px;
+            text-align: center;
+            margin-top: 150px;
+
+        }
+
+        .time {
+            font-size: 100px;
+            font-weight: bold;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+
+        .startTimer,
+        .pauseTimer,
+        .resetTimer {
+            height: 40px;
+            width: 200px;
+            font-size: 25px;
+            margin-top: 30px;
+        }
+
+        .startTimer:hover,
+        .pauseTimer:hover,
+        .resetTimer:hover {
+            background: #CC0000;
+            border-radius: 10px;
+        }
+
+        .lighter {
+            background-color: #CC0000;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="heading">LetsUpgrade Mini Project: JS StopWatch</h1>
+    <div class="timerContainer">
+        <div class="time">
+            00:00:00:00
+        </div>
+        <div>
+            <button class="startTimer" onclick="startTimer()">Start</button>
+            <button class="pauseTimer" onclick="pauseTimer()">Stop</button>
+            <button class="resetTimer" onclick="resetTimer()">Reset</button>
+        </div>
+    </div>
+</body>
+<script>
+    var startTimerButton = document.querySelector('.startTimer');
+    var pauseTimerButton = document.querySelector('.pauseTimer');
+    var timerDisplay = document.querySelector('.time');
+    var startTime;
+    var updatedTime;
+    var difference;
+    var tInterval;
+    var savedTime;
+    var paused = 0;
+    var running = 0;
+    function startTimer() {
+        if (!running) {
+            startTime = new Date().getTime();
+            tInterval = setInterval(getShowTime, 1);
+            paused = 0;
+            running = 1;
+            startTimerButton.classList.add('lighter');
+            pauseTimerButton.classList.remove('lighter');
+        }
+    }
+    function pauseTimer() {
+        if (!paused) {
+            clearInterval(tInterval);
+            savedTime = difference;
+            paused = 1;
+            running = 0;
+            startTimerButton.classList.remove('lighter')
+            pauseTimerButton.classList.add('lighter');
+        }
+    }
+    function resetTimer() {
+        clearInterval(tInterval);
+        savedTime = 0;
+        difference = 0;
+        paused = 0;
+        running = 0;
+        timerDisplay.innerHTML = '00:00:00:00';
+        startTimerButton.classList.remove('lighter')
+        pauseTimerButton.classList.remove('lighter');
+    }
+    function getShowTime() {
+        updatedTime = new Date().getTime();
+        if (savedTime) {
+            difference = (updatedTime - startTime) + savedTime;
+        } else {
+            difference = updatedTime - startTime;
+        }
+
+        var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+        var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+
+        var seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        var milliseconds = Math.floor((difference % (1000 * 60)) / 100);
+
+        hours = (hours < 10) ? "0" + hours : hours;
+        minutes = (minutes < 10) ? "0" + minutes : minutes;
+        seconds = (seconds < 10) ? "0" + seconds : seconds;
+        milliseconds = (milliseconds < 100) ? (milliseconds < 10) ? milliseconds : milliseconds.toString().slice(1) : milliseconds.toString().slice(2);
+        timerDisplay.innerHTML = hours + ':' + minutes + ':' + seconds + ':' + milliseconds;
+    }
+</script>
+
+</html>
